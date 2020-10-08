@@ -17,7 +17,7 @@ rootgroup: root
 service:
   name: systemd-journald
 subcomponent:
-  config: /etc/TEMPLATE-subcomponent-formula.conf
+  config: /etc/ad-subcomponent-formula.conf
 tofs:
   files_switch:
   - any/path/can/be/used/here
@@ -27,8 +27,8 @@ tofs:
   - os
   - os_family
   source_files:
-    TEMPLATE-config-file-file-managed:
+    ad-config-file-file-managed:
     - example.tmpl.jinja
-    TEMPLATE-subcomponent-config-file-file-managed:
+    ad-subcomponent-config-file-file-managed:
     - subcomponent-example.tmpl.jinja
 winner: pillar

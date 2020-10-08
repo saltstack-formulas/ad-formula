@@ -12,23 +12,23 @@
 ---
 Debian:
   pkg:
-    name: TEMPLATE-debian
-  config: /etc/TEMPLATE.d/custom.conf
+    name: ad-debian
+  config: /etc/ad.d/custom.conf
 
 RedHat:
   pkg:
-    name: TEMPLATE-redhat
-  config: /etc/TEMPLATE.conf
+    name: ad-redhat
+  config: /etc/ad.conf
 
 Suse:
   pkg:
-    name: TEMPLATE-suse
+    name: ad-suse
 
 Gentoo: {}
 
 Arch:
   pkg:
-    name: TEMPLATE-arch
+    name: ad-arch
   service:
     name: service-arch
 

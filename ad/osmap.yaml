@@ -13,14 +13,14 @@
 # os_family: Debian
 Ubuntu:
   pkg:
-    name: TEMPLATE-ubuntu
-  config: /etc/TEMPLATE.d/custom-ubuntu.conf
+    name: ad-ubuntu
+  config: /etc/ad.d/custom-ubuntu.conf
 Raspbian: {}
 
 # os_family: RedHat
 Fedora:
   pkg:
-    name: TEMPLATE-fedora
+    name: ad-fedora
   service:
     name: service-fedora
 CentOS: {}
