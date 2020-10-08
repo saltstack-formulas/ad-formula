@@ -188,46 +188,18 @@ verifier:
 
 suites:
   - name: default
-    excludes:
-      - centos-6-2019-2-py2
-      - amazonlinux-1-2019-2-py2
     provisioner:
       state_top:
         base:
           '*':
             - ad._mapdata
-            - ad
       pillars:
         top.sls:
           base:
             '*':
               - ad
-              - define_roles
       pillars_from_files:
         ad.sls: pillar.example
-        define_roles.sls: test/salt/pillar/define_roles.sls
-    verifier:
-      inspec_tests:
-        - path: test/integration/default
-  - name: upstart
-    includes:
-      - centos-6-2019-2-py2
-      - amazonlinux-1-2019-2-py2
-    provisioner:
-      state_top:
-        base:
-          '*':
-            - ad._mapdata
-            - ad
-      pillars:
-        top.sls:
-          base:
-            '*':
-              - ad
-              - define_roles
-      pillars_from_files:
-        ad.sls: test/salt/pillar/upstart.sls
-        define_roles.sls: test/salt/pillar/define_roles.sls
     verifier:
       inspec_tests:
         - path: test/integration/default
