@@ -1,9 +1,9 @@
 name: ad
-os: Debian, Ubuntu, Raspbian, RedHat, Fedora, CentOS, Amazon, Oracle, Suse, openSUSE, Gentoo, Funtoo, Arch, Manjaro, Alpine, FreeBSD, OpenBSD, Solaris, SmartOS, Windows, MacOS
-os_family: Debian, RedHat, Suse, Gentoo, Arch, Alpine, FreeBSD, OpenBSD, Solaris, Windows, MacOS
+os: Debian, Ubuntu, Raspbian, Windows
+os_family: Debian, Windows
 version: 1.0.0
 release: 1
 minimum_version: 2019.2
 summary: ad formula
-description: Formula to use as a template for other formulas
+description: join systems to an Active Directory
 top_level_dir: ad
