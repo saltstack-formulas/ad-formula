@@ -16,11 +16,12 @@ services:
   - docker
 
 ## Script to run for the test stage
-# script:
-#   - bin/kitchen verify "${INSTANCE}"
+script:
+  - bin/kitchen verify "${INSTANCE}"
 
 ## Stages and jobs matrix
 stages:
+  - test
   - name: 'release'
     if: 'branch = master AND type != pull_request'
 jobs:
@@ -82,9 +83,9 @@ jobs:
     #       to allow for comprehensive local testing
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/118
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
-    # - env: INSTANCE=default-debian-10-tiamat-py3
+    - env: INSTANCE=default-debian-10-tiamat-py3
     # - env: INSTANCE=default-debian-9-tiamat-py3
-    # - env: INSTANCE=default-ubuntu-2004-tiamat-py3
+    - env: INSTANCE=default-ubuntu-2004-tiamat-py3
     # - env: INSTANCE=default-ubuntu-1804-tiamat-py3
     # - env: INSTANCE=default-ubuntu-1604-tiamat-py3
     # - env: INSTANCE=default-centos-8-tiamat-py3
@@ -92,8 +93,8 @@ jobs:
     # - env: INSTANCE=default-amazonlinux-2-tiamat-py3
     # - env: INSTANCE=default-oraclelinux-8-tiamat-py3
     # - env: INSTANCE=default-oraclelinux-7-tiamat-py3
-    # - env: INSTANCE=default-debian-10-master-py3
-    # - env: INSTANCE=default-ubuntu-2004-master-py3
+    - env: INSTANCE=default-debian-10-master-py3
+    - env: INSTANCE=default-ubuntu-2004-master-py3
     # - env: INSTANCE=default-ubuntu-1804-master-py3
     # - env: INSTANCE=default-centos-8-master-py3
     # - env: INSTANCE=default-fedora-32-master-py3
@@ -103,7 +104,7 @@ jobs:
     # - env: INSTANCE=default-debian-10-3001-py3
     # - env: INSTANCE=default-debian-9-3001-py3
     # - env: INSTANCE=default-ubuntu-2004-3001-py3
-    # - env: INSTANCE=default-ubuntu-1804-3001-py3
+    - env: INSTANCE=default-ubuntu-1804-3001-py3
     # - env: INSTANCE=default-centos-8-3001-py3
     # - env: INSTANCE=default-centos-7-3001-py3
     # - env: INSTANCE=default-fedora-32-3001-py3
@@ -121,7 +122,7 @@ jobs:
     # - env: INSTANCE=default-opensuse-leap-152-3000-3-py3
     # - env: INSTANCE=default-amazonlinux-2-3000-3-py3
     # - env: INSTANCE=default-ubuntu-1804-3000-3-py2
-    # - env: INSTANCE=default-ubuntu-1604-3000-3-py2
+    - env: INSTANCE=default-ubuntu-1604-3000-3-py2
     # - env: INSTANCE=default-arch-base-latest-3000-3-py2
     # - env: INSTANCE=upstart-centos-6-2019-2-py2
     # - env: INSTANCE=upstart-amazonlinux-1-2019-2-py2
