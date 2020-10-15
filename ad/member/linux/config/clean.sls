@@ -14,3 +14,9 @@ ad/member/linux/config/clean/krb5/file.absent:
     - name: {{ ad.krb5.config }}
     - require:
       - sls: {{ sls_ad_leave }}
+
+ad/member/linux/config/clean/{{ ad.sssd.config_file }}/file.absent:
+  file.absent:
+    - name: {{ ad.sssd.config_file }}
+    - require:
+      - sls: {{ sls_ad_leave }}

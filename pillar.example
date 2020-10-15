@@ -10,4 +10,12 @@ ad:
   pkg:
     # Don't purge packages when doing `ad.member.package.clean`
     clean_purge_deps: false
+
+  sssd:
+    config:
+      # Login without `@<REALM>`
+      use_fully_qualified_names: false
+
+      # If user don't have `unixHomeDirectory` LDAP attribute
+      fallback_homedir: /home/%d/%u
 ...

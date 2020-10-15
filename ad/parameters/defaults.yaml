@@ -29,4 +29,13 @@ values:
 
   sssd:
     service: sssd
+    config_file: /etc/sssd/sssd.conf
+
+    config:
+      # Require to login with `<LOGIN>@<REALM>`
+      use_fully_qualified_names: true
+
+      # If user don't have `unixHomeDirectory` attribute
+      # some tools don't like the `@` in the home path so change default
+      fallback_homedir: /home/%d/%u
 ...

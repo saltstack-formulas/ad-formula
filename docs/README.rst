@@ -151,12 +151,27 @@ Configure the system in preparation of the Active Directory join.
 It depends on:
 
 - `ad.member.linux.config.krb5`_
+- `ad.member.linux.config.sssd`_
 
 
 ``ad.member.linux.config.krb5``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure ``krb5.conf`` for Active Directory.
+
+
+``ad.member.linux.config.sssd``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure the `sssd`_ service for the ``ad.realm``, for example to enable or disable the `fully qualified names`_ and the pattern of home dirs fallback for users without the `unixHomeDirectory`_ LDAP attribute.
+
+It `hooks`_ as `watch_in`_ to:
+
+- `ad.member.linux.service.running`_
+
+It depends on:
+
+- `ad.member.linux.join`_
 
 
 ``ad.member.linux.join``
@@ -251,6 +266,10 @@ The testing requires a working Active Directory and is not actually automated.
 
 .. _kernel: https://docs.saltstack.com/en/latest/topics/grains/index.html
 .. _sssd: https://github.com/SSSD/sssd
+.. _fully qualified names: https://sssd.io/docs/users/ad_provider.html#etcsssdsssdconf
+.. _unixHomeDirectory: https://docs.microsoft.com/en-us/windows/win32/adschema/a-unixhomedirectory
 .. _realm join:
 .. _realm leave: https://www.freedesktop.org/software/realmd/
-.. _watches: https://docs.saltstack.com/en/latest/ref/states/requisites.html#requisites-watch
+.. _hooks: https://docs.saltstack.com/en/latest/ref/states/requisites.html#the-in-version-of-requisites
+.. _watches:
+.. _watch_in: https://docs.saltstack.com/en/latest/ref/states/requisites.html#requisites-watch

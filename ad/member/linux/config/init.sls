@@ -3,3 +3,4 @@
 
 include:
   - .krb5
+  - .sssd

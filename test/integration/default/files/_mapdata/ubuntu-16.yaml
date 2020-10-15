@@ -36,4 +36,8 @@ pkg:
   - sssd-tools
 realm: example.net
 sssd:
+  config:
+    fallback_homedir: /home/%d/%u
+    use_fully_qualified_names: false
+  config_file: /etc/sssd/sssd.conf
   service: sssd
