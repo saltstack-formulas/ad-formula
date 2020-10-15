@@ -10,3 +10,21 @@ map_jinja:
   - C@ad:lookup
   - C@ad
   - Y:G@id
+pkg:
+  clean_purge_deps: false
+  conflicts:
+  - libnss-ldap
+  - libnss-ldapd
+  - libpam-ldap
+  - libpam-ldapd
+  - nscd
+  - nslcd
+  - nslcd-utils
+  dependencies:
+  - adcli
+  - heimdal-clients
+  - libnss-sss
+  - libpam-sss
+  - realmd
+  - sssd
+  - sssd-tools

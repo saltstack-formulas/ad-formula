@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+ad:
+  pkg:
+    # Don't purge packages when doing `ad.member.package.clean`
+    clean_purge_deps: false
 ...

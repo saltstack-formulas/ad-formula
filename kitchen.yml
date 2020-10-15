@@ -193,6 +193,7 @@ suites:
         base:
           '*':
             - ad._mapdata
+            - ad.member.linux.package
       pillars:
         top.sls:
           base:

@@ -2,4 +2,24 @@
 # vim: ft=yaml
 ---
 values:
+  pkg:
+    conflicts:
+      - libnss-ldap
+      - libnss-ldapd
+      - libpam-ldap
+      - libpam-ldapd
+      - nscd
+      - nslcd
+      - nslcd-utils
+
+    # Purge the dependencies when doing `ad.member.package.clean`
+    clean_purge_deps: true
+    dependencies:
+      - adcli
+      - heimdal-clients
+      - libnss-sss
+      - libpam-sss
+      - realmd
+      - sssd
+      - sssd-tools
 ...
