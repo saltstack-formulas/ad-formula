@@ -1,3 +1,12 @@
 # yamllint disable rule:indentation rule:line-length
 # Ubuntu-16.04
 ---
+map_jinja:
+  sources:
+  - Y:G@osarch
+  - Y:G@os_family
+  - Y:G@os
+  - Y:G@osfinger
+  - C@ad:lookup
+  - C@ad
+  - Y:G@id
