@@ -22,4 +22,7 @@ values:
       - realmd
       - sssd
       - sssd-tools
+
+  krb5:
+    config: /etc/krb5.conf
 ...

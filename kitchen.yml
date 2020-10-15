@@ -193,7 +193,7 @@ suites:
         base:
           '*':
             - ad._mapdata
-            - ad.member.linux.package
+            - ad.member.linux.config.krb5
       pillars:
         top.sls:
           base:

@@ -111,6 +111,7 @@ Join a GNU/Linux system to an Active Directory.
 It depends on:
 
 - `ad.member.linux.package`_
+- `ad.member.linux.config`_
 
 
 ``ad.member.linux.package``
@@ -136,6 +137,24 @@ Remove any conflicting packages with the tools used to join the Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install packages required to join the Active Directory.
+
+
+``ad.member.linux.config``
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Meta-state (This is a state that includes other states)*.
+
+Configure the system in preparation of the Active Directory join.
+
+It depends on:
+
+- `ad.member.linux.config.krb5`_
+
+
+``ad.member.linux.config.krb5``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configure ``krb5.conf`` for Active Directory.
 
 
 ``ad.leave``
@@ -171,7 +190,14 @@ Remove a GNU/Linux system from an Active Directory.
 
 It depends on:
 
+- `ad.member.linux.config.clean`_
 - `ad.member.linux.package.clean`_
+
+
+``ad.member.linux.config.clean``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove the configuration in place.
 
 
 ``ad.member.linux.package.clean``

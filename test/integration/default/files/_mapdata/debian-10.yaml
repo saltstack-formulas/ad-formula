@@ -1,6 +1,9 @@
 # yamllint disable rule:indentation rule:line-length
 # Debian-10
 ---
+dc: dc1.example.net
+krb5:
+  config: /etc/krb5.conf
 map_jinja:
   sources:
   - Y:G@osarch
@@ -28,3 +31,4 @@ pkg:
   - realmd
   - sssd
   - sssd-tools
+realm: example.net

@@ -2,6 +2,9 @@
 # vim: ft=yaml
 ---
 ad:
+  realm: example.net
+  dc: dc1.example.net
+
   pkg:
     # Don't purge packages when doing `ad.member.package.clean`
     clean_purge_deps: false
