@@ -99,6 +99,7 @@ Take all steps required to make the system an Active Directory member.
 It depends on states related to the `kernel`_, actually:
 
 - `ad.member.linux`_
+- `ad.member.windows`_
 
 
 ``ad.member.linux``
@@ -202,6 +203,24 @@ It `watches`_:
 - `ad.member.linux.join`_ to restart the service after joining the domain
 
 
+``ad.member.windows``
+^^^^^^^^^^^^^^^^^^^^^
+
+*Meta-state (This is a state that includes other states)*.
+
+Join a Microsoft Windows system to an Active Directory.
+
+It depends on:
+
+- `ad.member.windows.join`_
+
+
+``ad.member.windows.join``
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Join a Microsoft Windows system to an Active Directory and restart the system if required.
+
+
 ``ad.leave``
 ^^^^^^^^^^^^
 
@@ -224,6 +243,7 @@ Take all steps required to make the system leave an Active Directory.
 It depends on states related to the `kernel`_, actually:
 
 - `ad.member.linux.clean`_
+- `ad.member.windows.clean`_
 
 
 ``ad.member.linux.clean``
@@ -256,6 +276,21 @@ Remove the configuration in place.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Remove required packages to join the Active Directory.
+
+
+``ad.member.windows.clean``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Meta-state (This is a state that includes other states)*.
+
+Remove a Microsoft Windows system from an Active Directory.
+
+It depends on `ad.member.windows.leave`_
+
+``ad.member.windows.leave``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a Microsoft Windows system from an Active Directory and reboot the system if required.
 
 
 Testing
