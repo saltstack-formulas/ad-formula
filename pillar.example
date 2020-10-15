@@ -4,6 +4,8 @@
 ad:
   realm: example.net
   dc: dc1.example.net
+  join_username: IntegratorAccount
+  join_password: AverySecretAndSecurePasswordYouShouldAutoresetPeriodically
 
   pkg:
     # Don't purge packages when doing `ad.member.package.clean`

@@ -25,4 +25,8 @@ values:
 
   krb5:
     config: /etc/krb5.conf
+    kinit_password_tmpfile: /root/kinit-password
+
+  sssd:
+    service: sssd
 ...

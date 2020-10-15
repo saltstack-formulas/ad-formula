@@ -112,6 +112,8 @@ It depends on:
 
 - `ad.member.linux.package`_
 - `ad.member.linux.config`_
+- `ad.member.linux.join`_
+- `ad.member.linux.service`_
 
 
 ``ad.member.linux.package``
@@ -157,6 +159,34 @@ It depends on:
 Configure ``krb5.conf`` for Active Directory.
 
 
+``ad.member.linux.join``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Join a GNU/Linux system to an Active Directory using the `realm join`_ command.
+
+It depends on:
+
+- `ad.member.linux.config.krb5`_
+
+
+``ad.member.linux.service``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Meta-state (This is a state that includes other states)*.
+
+Restart the `sssd`_ service.
+
+
+``ad.member.linux.service.running``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Restart the `sssd`_ service.
+
+It `watches`_:
+
+- `ad.member.linux.join`_ to restart the service after joining the domain
+
+
 ``ad.leave``
 ^^^^^^^^^^^^
 
@@ -190,8 +220,15 @@ Remove a GNU/Linux system from an Active Directory.
 
 It depends on:
 
+- `ad.member.linux.leave`_
 - `ad.member.linux.config.clean`_
 - `ad.member.linux.package.clean`_
+
+
+``ad.member.linux.leave``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove a GNU/Linux system from an Active Directory using `realm leave`_.
 
 
 ``ad.member.linux.config.clean``
@@ -213,3 +250,7 @@ The testing requires a working Active Directory and is not actually automated.
 
 
 .. _kernel: https://docs.saltstack.com/en/latest/topics/grains/index.html
+.. _sssd: https://github.com/SSSD/sssd
+.. _realm join:
+.. _realm leave: https://www.freedesktop.org/software/realmd/
+.. _watches: https://docs.saltstack.com/en/latest/ref/states/requisites.html#requisites-watch

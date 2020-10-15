@@ -4,3 +4,5 @@
 include:
   - .package
   - .config
+  - .join
+  - .service
