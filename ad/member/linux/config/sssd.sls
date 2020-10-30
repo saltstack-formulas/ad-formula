@@ -18,7 +18,7 @@ ad/member/linux/config/sssd/ini.options_present:
   ini.options_present:
     - name: {{ ad.sssd.config_file }}
     - sections:
-        {{ "domain/" ~ ad.realm }}: {{ sssd_config }}
+        {{ "domain/" ~ ad.realm }}: {{ sssd_config | yaml }}
     - require:
       - sls: {{ sls_join }}
     - watch_in:
